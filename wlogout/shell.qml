@@ -3,42 +3,42 @@ import Quickshell
 
 ShellRoot {
 	WLogout {
-		WlButton {
+		LogoutButton {
 			command: "loginctl lock-screen"
 			keybind: Qt.Key_K
 			text: "Lock"
 			icon: "lock"
 		}
 
-		WlButton {
+		LogoutButton {
 			command: "loginctl terminate-user $USER"
 			keybind: Qt.Key_E
 			text: "Logout"
 			icon: "logout"
 		}
 
-		WlButton {
+		LogoutButton {
 			command: "systemctl suspend"
 			keybind: Qt.Key_U
 			text: "Suspend"
 			icon: "suspend"
 		}
 
-		WlButton {
+		LogoutButton {
 			command: "systemctl hibernate"
 			keybind: Qt.Key_H
 			text: "Hibernate"
 			icon: "hibernate"
 		}
 
-		WlButton {
+		LogoutButton {
 			command: "systemctl poweroff"
 			keybind: Qt.Key_K
 			text: "Shutdown"
 			icon: "shutdown"
 		}
 
-		WlButton {
+		LogoutButton {
 			command: "systemctl reboot"
 			keybind: Qt.Key_R
 			text: "Reboot"

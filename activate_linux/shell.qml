@@ -31,7 +31,7 @@ ShellRoot {
 
 			// Use the wlroots specific layer property to ensure it displays over
 			// fullscreen windows.
-			WlrLayershell.layer: Layer.Overlay
+			WlrLayershell.layer: WlrLayer.Overlay
 
 			ColumnLayout {
 				id: content

@@ -9,15 +9,15 @@ Variants {
 	property color backgroundColor: "#e60c0c0c"
 	property color buttonColor: "#1e1e1e"
 	property color buttonHoverColor: "#3700b3"
-	default property list<WlButton> buttons
+	default property list<LogoutButton> buttons
 
 	variants: Quickshell.screens.map(screen => ({ screen }))
 	PanelWindow {
 		id: w
 
 		exclusionMode: ExclusionMode.Ignore
-		WlrLayershell.layer: Layer.Overlay
-		WlrLayershell.keyboardFocus: KeyboardFocus.Exclusive
+		WlrLayershell.layer: WlrLayer.Overlay
+		WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
 
 		color: "transparent"
 
@@ -62,7 +62,7 @@ Variants {
 					Repeater {
 						model: buttons
 						delegate: Rectangle {
-							required property WlButton modelData;
+							required property LogoutButton modelData;
 
 							Layout.fillWidth: true
 							Layout.fillHeight: true

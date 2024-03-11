@@ -9,7 +9,7 @@ ShellRoot {
 		onUnlocked: lock.locked = false
 	}
 
-	SessionLock {
+	WlSessionLock {
 		id: lock
 		locked: true
 
@@ -17,7 +17,7 @@ ShellRoot {
 			if (!locked) Qt.quit();
 		}
 
-		SessionLockSurface {
+		WlSessionLockSurface {
 			// You probably want to replace this with an image.
 			color: "#303030"
 
