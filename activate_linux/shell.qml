@@ -6,10 +6,13 @@ import Quickshell.Wayland
 ShellRoot {
 	Variants {
 		// Create the panel once on each monitor.
-		variants: Quickshell.screens.map(screen => ({ screen }))
+		model: Quickshell.screens
 
 		PanelWindow {
 			id: w
+
+			property var modelData
+			screen: modelData
 
 			anchors {
 				right: true

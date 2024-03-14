@@ -11,9 +11,12 @@ Variants {
 	property color buttonHoverColor: "#3700b3"
 	default property list<LogoutButton> buttons
 
-	variants: Quickshell.screens.map(screen => ({ screen }))
+	model: Quickshell.screens
 	PanelWindow {
 		id: w
+
+		property var modelData
+		screen: modelData
 
 		exclusionMode: ExclusionMode.Ignore
 		WlrLayershell.layer: WlrLayer.Overlay
