@@ -1,7 +1,7 @@
-import Quickshell // for ShellRoot and PanelWindow
-import QtQuick // for Text
+import Quickshell
+import QtQuick
 import QtQuick.Layouts
-import Quickshell.Wayland // for WlrLayershell
+import Quickshell.Wayland
 
 ShellRoot {
     PanelWindow {
@@ -19,7 +19,7 @@ ShellRoot {
         Rectangle {
             anchors.fill: parent
             color: "transparent"
-            AnimatedImage {
+            Image { // if you want a gif, use AnimatedImage instead
                 id: img
                 source: "./hollow.jpg"
                 fillMode: Image.PreserveAspectCrop
