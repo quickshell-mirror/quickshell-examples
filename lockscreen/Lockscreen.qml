@@ -6,12 +6,12 @@ Item {
 
 	Item {
 		anchors.centerIn: parent
-		scale: 2
 
 		TextField {
 			id: entryBox
 			anchors.centerIn: parent
-			width: 300
+			width: 600
+			font.pointSize: 24
 
 			enabled: context.status != AuthContext.Status.Authenticating
 			focus: true
@@ -32,11 +32,12 @@ Item {
 		Text {
 			id: status
 			color: "white"
+			font.pointSize: 24
 
 			anchors {
 				horizontalCenter: entryBox.horizontalCenter
 				top: entryBox.bottom
-				topMargin: 20
+				topMargin: 40
 			}
 
 			text: {
