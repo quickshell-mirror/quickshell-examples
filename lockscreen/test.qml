@@ -2,17 +2,24 @@ import QtQuick
 import Quickshell
 
 ShellRoot {
-	AuthContext {
-		id: authContext
-		onUnlocked: Qt.quit()
+	LockContext {
+		id: lockContext
+		onUnlocked: Qt.quit();
 	}
 
 	FloatingWindow {
-		color: "#303030"
-
-		Lockscreen {
+		LockSurface {
 			anchors.fill: parent
-			context: authContext
+			context: lockContext
+		}
+	}
+
+	// exit the example if the window closes
+	Connections {
+		target: Quickshell
+
+		function onLastWindowClosed() {
+			Qt.quit();
 		}
 	}
 }

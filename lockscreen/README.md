@@ -1,7 +1,7 @@
 # Lockscreen
 
-This is a barebones lockscreen with a password input box.
-Note that you MUST have `pamtester` installed or you won't be able to log in.
+This is a simple but functional lockscreen that follows the system color scheme.
+The only authentication method it supports is a password.
 
 You can run the lockscreen with `quickshell -p shell.qml`.
 

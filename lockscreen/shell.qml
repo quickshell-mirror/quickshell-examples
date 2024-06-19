@@ -1,38 +1,31 @@
-import QtQuick
-import QtQuick.Controls.Basic
 import Quickshell
 import Quickshell.Wayland
 
 ShellRoot {
-	AuthContext {
-		id: authContext
-		onUnlocked: lock.locked = false
+	// This stores all the information shared between the lock surfaces on each screen.
+	LockContext {
+		id: lockContext
+
+		onUnlocked: {
+			// Unlock the screen before exiting, or the compositor will display a
+			// fallback lock you can't interact with.
+			lock.locked = false;
+
+			Qt.quit();
+		}
 	}
 
 	WlSessionLock {
 		id: lock
+
+		// Lock the session immediately when quickshell starts.
 		locked: true
 
-		onLockedChanged: {
-			if (!locked) Qt.quit();
-		}
-
 		WlSessionLockSurface {
-			// You probably want to replace this with an image.
-			color: "#303030"
-
-			// For your own sanity you should probably keep this
-			// while working on the lockscreen.
-			Button {
-				text: "Help! I misconfigured my lockscreen!"
-				onClicked: lock.locked = false
-			}
-
-			Lockscreen {
+			LockSurface {
 				anchors.fill: parent
-				context: authContext
+				context: lockContext
 			}
 		}
 	}
-
 }
