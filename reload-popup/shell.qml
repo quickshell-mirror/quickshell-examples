@@ -19,7 +19,6 @@ ShellRoot {
 		Text {
 			anchors.centerIn: parent
 			text: "I'm a bar!"
-			an error
 		}
 	}
 }
