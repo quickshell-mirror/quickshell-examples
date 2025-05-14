@@ -12,11 +12,13 @@ Scope {
 		target: Quickshell
 
 		function onReloadCompleted() {
+			Quickshell.inhibitReloadPopup();
 			root.failed = false;
 			popupLoader.loading = true;
 		}
 
 		function onReloadFailed(error: string) {
+			Quickshell.inhibitReloadPopup();
 			// Close any existing popup before making a new one.
 			popupLoader.active = false;
 
