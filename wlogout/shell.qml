@@ -4,7 +4,7 @@ import Quickshell
 ShellRoot {
 	WLogout {
 		LogoutButton {
-			command: "loginctl lock-screen"
+			command: "loginctl lock-session"
 			keybind: Qt.Key_K
 			text: "Lock"
 			icon: "lock"

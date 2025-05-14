@@ -11,11 +11,10 @@ QtObject {
 
 	readonly property var process: Process {
 		command: ["sh", "-c", button.command]
-		manageLifetime: false
 	}
 
 	function exec() {
-		process.running = true;
+		process.startDetached();
 		Qt.quit();
 	}
 }
