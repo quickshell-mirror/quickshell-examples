@@ -24,8 +24,8 @@ ShellRoot {
 				bottom: 50
 			}
 
-			width: content.width
-			height: content.height
+			implicitWidth: content.width
+			implicitHeight: content.height
 
 			color: "transparent"
 
