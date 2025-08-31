@@ -6,7 +6,8 @@ ShellRoot {
 	Socket {
 		// Create and connect a Socket to the hyprland event socket.
 		// https://wiki.hyprland.org/IPC/
-		path: `/tmp/hypr/${Quickshell.env("HYPRLAND_INSTANCE_SIGNATURE")}/.socket2.sock`
+		
+		path: `${Quickshell.env("XDG_RUNTIME_DIR")}/hypr/${Quickshell.env("HYPRLAND_INSTANCE_SIGNATURE")}/.socket2.sock`
 		connected: true
 
 		parser: SplitParser {
